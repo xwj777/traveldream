@@ -1,0 +1,29 @@
+server:
+  port: 80
+
+# MyBatis配置
+#mybatis:
+  #mapper-locations: classpath:mappers/*.xml
+  #type-aliases-package: com.travel.pojo
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  type-aliases-package: com.travel.pojo
+
+# 数据源配置
+spring:
+  datasource:
+    password: 123456
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://localhost:3306/travel?useUnicode=true&characterEncoding=utf-8
+    username: root
+  thymeleaf:
+    cache: false # 不要缓存 修改了模板自动生效
+    check-template-location: 'true' # 检查模板的位置
+    mode: HTML5
+    prefix: 'classpath:/templates/'  # 模板的位置
+    suffix: '.html'    # 模板的后缀
+    servlet:
+      content-type: 'text/html '
+    encoding: UTF-8
